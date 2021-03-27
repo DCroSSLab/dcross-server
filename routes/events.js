@@ -20,7 +20,7 @@ router.get('/nowcasts', function(req, res, next) {
     const mongo = req.app.get('mongo_client');
     const nowcasts = mongo.events.collection("nowcasts");
     var date = new Date();
-    date.setDate(date.getDate() - 1);
+    // date.setDate(date.getDate() - 1);
     nowcasts.find({"properties.forecast.issue_time": {$gte: date}}).toArray(function (err, docs){
         if(err) {console.error(err)}
         res.json({"type": "FeatureCollection", "features": docs});

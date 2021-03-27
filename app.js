@@ -14,6 +14,7 @@ MongoClient.connect(mongo_uri, function(err, client) {
   // mongo = client.db('test') // once connected, assign the connection to the global variable
   mongo.events = client.db('events');
   mongo.reports = client.db('reports')
+  mongo.users = client.db('users');
 })
 
 var indexRouter = require('./routes/index');
@@ -35,6 +36,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/reports/telegram/images', express.static(path.join(__dirname, '/../shared_data/telegram/images')));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
