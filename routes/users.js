@@ -1,3 +1,14 @@
+/**
+*
+* Project Name: 	DCroSS
+* Author List: 		Faraaz Biyabani
+* Filename: 		users.js
+* Description:      Router for the /users route
+* Endpoints:        /user:id
+*
+*/
+
+
 var express = require('express');
 var router = express.Router();
 var ObjectID = require('mongodb').ObjectID;

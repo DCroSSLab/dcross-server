@@ -1,3 +1,13 @@
+/**
+*
+* Project Name: 	DCroSS
+* Author List: 		Faraaz Biyabani
+* Filename: 		index.js
+* Description:      Default Express index page
+*
+*/
+
+
 var express = require('express');
 var router = express.Router();
 
